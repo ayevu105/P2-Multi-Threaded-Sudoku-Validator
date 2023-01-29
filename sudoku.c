@@ -16,17 +16,11 @@
 
 // structure for passing data to the threads
   typedef struct {
-      // row num
       int row;
-      // column num
       int column;
-      // grid representing the puzzle
       int** puzzle;
-      // length/width of puzzle
       int size;
-      // array representing validity of indexes
       int* validity;
-
   } Parameters;
 
 void* checkRow(void* parameters);
@@ -34,7 +28,7 @@ void* checkCol(void* parameters);
 void* checkBox(void* parameters);
 bool verifyPuzzleComplete(int** puzzle, int size);
 
-// stores the current box index
+// stores current box index
 int boxCount = 1;
 
 // checkRow determines whether a row is valid
